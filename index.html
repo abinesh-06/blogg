@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Blog - Palani Temple</title>
+  <style>
+    :root{
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #4f46e5;
+      --max-w: 1000px;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.06);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111827;line-height:1.6}
+
+    .wrap{max-width:var(--max-w);margin:36px auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+
+    nav{display:flex;gap:10px}
+    nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--accent);font-weight:600}
+
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:20px}
+
+    /* Post cards */
+    .post{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .post .meta{padding:18px 18px 0}
+    .post h2{margin:0 0 8px;font-size:18px}
+    .post p{margin:0 0 14px;color:var(--muted)}
+    .post .read{display:inline-block;margin-bottom:18px;padding:8px 12px;border-radius:8px;text-decoration:none;background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;font-weight:600}
+    .post img{width:100%;height:200px;object-fit:cover;display:block}
+
+    /* Sidebar */
+    aside{position:relative}
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow);margin-bottom:16px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef2ff;color:var(--accent);font-weight:600;margin:6px 6px 0 0}
+
+    /* small details */
+    .meta small{color:var(--muted)}
+    .post-list{display:flex;flex-direction:column;gap:18px}
+
+    footer{text-align:center;color:var(--muted);margin-top:30px;font-size:14px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .layout{grid-template-columns:1fr}
+      aside{order:-1}
+    }
+
+    /* Minimal utilities */
+    .flex{display:flex;align-items:center;gap:10px}
+    .avatar{width:40px;height:40px;border-radius:8px;display:inline-block;background:#111827;color:white;display:flex;align-items:center;justify-content:center}
+    .search{display:flex;gap:8px}
+    input[type=search]{padding:8px 10px;border-radius:10px;border:1px solid #e6e8f0;min-width:180px}
+
+    /* Simple footer links */
+    .sm a{color:var(--muted);text-decoration:none;margin:0 8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">PT</div>
+        <div>
+          <h1>Palani Temple Blog</h1>
+          <p class="lead">A simple blog layout sharing history, culture, and traditions</p>
+        </div>
+      </div>
+
+      <div class="flex">
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">History</a>
+          <a href="#">Traditions</a>
+        </nav>
+        <div class="search">
+          <input type="search" placeholder="Search posts...">
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section>
+        <div class="post-list">
+
+          <article class="post">
+            <img src="images/gop.jpg" alt="Palani Temple Main Gopuram">
+            <div class="meta">
+              <small>May 3, 2025 · 5 min read</small>
+              <h2>The Legend of Palani Murugan</h2>
+              <p>The Palani Temple is one of the six abodes of Lord Murugan, and its legend is deeply rooted in devotion and Tamil culture.</p>
+              <a class="read" href="#">Read →</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="images/steps.jpg" alt="Steps to Palani Temple">
+            <div class="meta">
+              <small>Apr 15, 2025 · 4 min read</small>
+              <h2>Pilgrimage and Devotion</h2>
+              <p>Thousands of devotees visit Palani each year, climbing the sacred steps with faith and chanting hymns in praise of Lord Murugan.</p>
+              <a class="read" href="#">Read →</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="images/ins.jpg" alt="Inside view of Palani Temple">
+            <div class="meta">
+              <small>Mar 10, 2025 · 6 min read</small>
+              <h2>Architecture of the Temple</h2>
+              <p>The temple architecture reflects Dravidian style, with beautifully carved gopurams and sanctum dedicated to Lord Murugan.</p>
+              <a class="read" href="#">Read →</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <div class="flex">
+            <div class="avatar">P</div>
+            <div>
+              <strong>Palani Insights</strong>
+              <div style="color:var(--muted);font-size:13px">Sharing stories, history, and traditions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;margin-bottom:8px">Tags</h3>
+          <div>
+            <span class="tag">History</span>
+            <span class="tag">Culture</span>
+            <span class="tag">Devotion</span>
+            <span class="tag">Architecture</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;margin-bottom:8px">About</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">This blog highlights Palani Temple's spiritual importance, cultural traditions, and architectural beauty. Built with plain HTML and CSS.</p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;margin-bottom:8px">Subscribe</h3>
+          <form onsubmit="event.preventDefault();alert('Subscribed — demo only')">
+            <input type="email" placeholder="Email address" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e8f0;margin-bottom:8px">
+            <button style="width:100%;padding:10px;border-radius:8px;border:none;background:linear-gradient(90deg,var(--accent),#06b6d4);color:#fff;font-weight:700">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="sm">Made with ♥ — Simple demo blog on Palani Temple. <a href="#">Privacy</a> · <a href="#">Terms</a></div>
+    </footer>
+  </div>
+</body>
+</html>
